@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<header>
+		<h1>Welcome to Our Insurance Management System</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a th:href="@{/members}">Members</a></li>
+			<li><a th:href="@{/policies}">Policies</a></li>
+			<li><a th:href="@{/memberpolicies}">Member Policies</a></li>
+			<li><a th:href="@{/claims}">Claims</a></li>
+		</ul>
+	</nav>
+
+	<footer>
+		<p>Insurance Management System © 2024</p>
+	</footer>
+</body>
+</html>
