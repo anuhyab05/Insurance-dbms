@@ -8,27 +8,29 @@
 <body>
     <div th:replace="header :: common-header"></div>
 
-    <h1>Claims</h1>
-    <a th:href="@{/claims/add}">File a New Claim</a>
-    <table>
-        <tr>
-            <th>Member</th>
-            <th>Policy</th>
-            <th>Claim Amount</th>
-            <th>Status</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        <tr th:each="claim : ${claims}">
-            <td th:text="${claim.memberPolicy.member.name}">Member Name</td>
-            <td th:text="${claim.memberPolicy.policy.policyName}">Policy Name</td>
-            <td th:text="${claim.claimAmount}">Claim Amount</td>
-            <td th:text="${claim.claimStatus}">Status</td>
-            <td><a th:href="@{'/claims/edit/' + ${claim.claimId}}">Edit</a></td>
-            <td><a th:href="@{'/claims/delete/' + ${claim.claimId}}">Delete</a></td>
-        </tr>
-    </table>
+    <div class="main-content">
+        <h1 class="page-title">Claims</h1>
+        <a class="add-button" th:href="@{/claims/add}">File a New Claim</a>
+        <table>
+            <tr>
+                <th>Member</th>
+                <th>Policy</th>
+                <th>Claim Amount</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="claim : ${claims}">
+                <td th:text="${claim.memberPolicy.member.name}">Member Name</td>
+                <td th:text="${claim.memberPolicy.policy.policyName}">Policy Name</td>
+                <td th:text="${claim.claimAmount}">Claim Amount</td>
+                <td th:text="${claim.claimStatus}">Status</td>
+                <td><a class="edit-button" th:href="@{'/claims/edit/' + ${claim.claimId}}">Edit</a></td>
+                <td><a class="delete-button" th:href="@{'/claims/delete/' + ${claim.claimId}}">Delete</a></td>
+            </tr>
+        </table>
 
-    <a th:href="@{/}">Back to Home</a>
+        <a class="back-button" th:href="@{/}">Back to Home</a>
+    </div>
 </body>
 </html>

@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Members</title>
-    <link rel="stylesheet" href="/css/style.css">
-    
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<!-- Include header fragment -->
-	<div th:replace="header :: common-header"></div>
-<h1>Members</h1>
-<a th:href="@{/members/add}">Add Member</a>
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone Number</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    <tr th:each="member : ${members}">
-        <td th:text="${member.name}">Name</td>
-        <td th:text="${member.email}">Email</td>
-        <td th:text="${member.phoneNumber}">Phone Number</td>
-        <td><a th:href="@{'/members/edit/' + ${member.memberId}}">Edit</a></td>
-        <td><a th:href="@{'/members/delete/' + ${member.memberId}}">Delete</a></td>
-    </tr>
-</table>
+    <div th:replace="header :: common-header"></div>
+
+    <div class="main-content">
+        <h1 class="page-title">Members</h1>
+        <a class="add-button" th:href="@{/members/add}">Add Member</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.memberId}"></td>
+                <td th:text="${member.name}"></td>
+                <td th:text="${member.email}"></td>
+                <td th:text="${member.phoneNumber}"></td>
+                <td><a class="edit-button" th:href="@{'/members/edit/' + ${member.memberId}}">Edit</a></td>
+                <td><a class="delete-button" th:href="@{'/members/delete/' + ${member.memberId}}">Delete</a></td>
+            </tr>
+        </table>
+        <a class="back-button" th:href="@{/}">Back to Home</a>
+    </div>
 </body>
 </html>

@@ -8,10 +8,12 @@
 <body>
     <div th:replace="header :: common-header"></div>
 
-    <div class="error-message">
-        <h2>Oops! Something went wrong.</h2>
-        <p th:text="${errorMessage}">An error occurred, but no message was provided.</p>
-        <a th:href="@{/}">Go back to the homepage</a>
+    <div class="main-content">
+        <h1 class="page-title">Oops! Something went wrong.</h1>
+        <div class="error-message">
+            <p th:text="${errorMessage}">An error occurred, but no message was provided.</p>
+            <a class="back-button" th:href="@{/}">Go back to the homepage</a>
+        </div>
     </div>
 </body>
 </html>

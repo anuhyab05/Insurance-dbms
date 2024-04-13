@@ -279,3 +279,99 @@ table a:hover {
 }
 
 /* The .back-button class has already been styled in the previous CSS update. */
+.main-content {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Provides spacing from the fixed header */
+}
+
+.page-title {
+    color: #dc3545; /* Typically red to indicate an error */
+}
+
+.error-message {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff3cd; /* Light yellow background for visibility */
+    border: 1px solid #ffeeba; /* Light yellow border */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 80%;
+    max-width: 600px; /* Ensures the content does not stretch too wide on larger screens */
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header, .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-menu a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #0056b3;
+}
+
+.nav-menu img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.site-footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.site-footer p {
+    margin: 0;
+}

@@ -3,22 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Home</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<!-- Add FontAwesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
+
 <body>
-	<!-- Include header fragment -->
 	<div th:replace="header :: common-header"></div>
 
-	<nav>
-		<ul>
-			<li><a th:href="@{/members}">Members</a></li>
-			<li><a th:href="@{/policies}">Policies</a></li>
-			<li><a th:href="@{/memberpolicies}">Member Policies</a></li>
-			<li><a th:href="@{/claims}">Claims</a></li>
-		</ul>
-	</nav>
+	<div class="main-content">
+		<nav class="nav-menu">
+			<ul>
+				<li><a th:href="@{/members}"><i class="fas fa-users"></i>
+						Members</a></li>
+				<li><a th:href="@{/policies}"><i class="fas fa-file-alt"></i>
+						Policies</a></li>
+				<li><a th:href="@{/memberpolicies}"><i
+						class="fas fa-file-contract"></i> Member Policies</a></li>
+				<li><a th:href="@{/claims}"><i
+						class="fas fa-clipboard-check"></i> Claims</a></li>
+			</ul>
+		</nav>
+	</div>
 
-	<footer>
+
+	<footer class="site-footer">
 		<p>Insurance Management System © 2024</p>
 	</footer>
 </body>
