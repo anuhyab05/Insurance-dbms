@@ -8,12 +8,28 @@
 <body>
     <div th:replace="header :: common-header"></div>
 
-    <h1>Edit Claim</h1>
-    <form th:action="@{'/claims/update/' + ${claim.claimId}}" th:object="${claim}" method="post">
-        <!-- The form structure is similar to add-claim.html -->
-        <!-- ... -->
-    </form>
+    <div class="main-content">
+        <h1 class="page-title">Edit Claim</h1>
+        <form th:action="@{'/claims/update/' + ${claim.claimId}}" th:object="${claim}" method="post">
+            <div class="form-group">
+                <label for="memberPolicy">Member Policy:</label>
+                <select id="memberPolicy" name="memberPolicyId" th:field="*{memberPolicy.memberPolicyId}">
+                    <option th:each="mp : ${memberPolicies}" th:value="${mp.memberPolicyId}"
+                            th:text="${mp.member.name + ' - ' + mp.policy.policyName}">Member Policy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="claimAmount">Claim Amount:</label>
+                <input type="number" id="claimAmount" name="claimAmount" th:field="*{claimAmount}" />
+            </div>
+            <div class="form-group">
+                <label for="claimStatus">Claim Status:</label>
+                <input type="text" id="claimStatus" name="claimStatus" th:field="*{claimStatus}" />
+            </div>
+            <input type="submit" value="Update" class="submit-button">
+        </form>
 
-    <a th:href="@{/claims}">Cancel</a>
+        <a class="back-button" th:href="@{/claims}">Cancel</a>
+    </div>
 </body>
 </html>
