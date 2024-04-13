@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Member Policies</title>
-<link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta charset="UTF-8">
+    <title>Member Policies</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<!-- Include header fragment -->
-	<div th:replace="header :: common-header"></div>
-	<h1>Member Policies</h1>
-	<form action="#" th:action="@{/memberpolicies/search}" method="get">
-		<label for="memberId">Search by Member ID:</label> <input type="text"
-			id="memberId" name="memberId"> <input type="submit"
-			value="Search">
-	</form>
+    <div th:replace="header :: common-header"></div>
 
-	<a th:href="@{/memberpolicies/add}">Add Member Policy</a>
-	<table>
-		<tr>
-			<th>Member Name</th>
-			<th>Policy Name</th>
-			<th>Policy Status</th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
-		<tr th:each="memberPolicy : ${memberPolicies}">
-			<td th:text="${memberPolicy.member.name}">Member Name</td>
-			<td th:text="${memberPolicy.policy.policyName}">Policy Name</td>
-			<td th:text="${memberPolicy.policyStatus}">Status</td>
-			<td><a
-				th:href="@{'/memberpolicies/edit/' + ${memberPolicy.memberPolicyId}}">Edit</a></td>
-			<td><a
-				th:href="@{'/memberpolicies/delete/' + ${memberPolicy.memberPolicyId}}">Delete</a></td>
-		</tr>
-	</table>
+    <div class="main-content">
+        <h1 class="page-title">Member Policies</h1>
+        
+        <form th:action="@{/memberpolicies/search}" method="get" class="search-form">
+            <label for="memberId">Search by Member ID:</label>
+            <input type="text" id="memberId" name="memberId" class="input-field">
+            <input type="submit" value="Search" class="submit-button">
+        </form>
 
-	<a th:href="@{/}">Back to Home</a>
+        <a class="add-button" th:href="@{/memberpolicies/add}">Add Member Policy</a>
+        <table>
+            <tr>
+                <th>Member Name</th>
+                <th>Policy Name</th>
+                <th>Policy Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="memberPolicy : ${memberPolicies}">
+                <td th:text="${memberPolicy.member.name}">Member Name</td>
+                <td th:text="${memberPolicy.policy.policyName}">Policy Name</td>
+                <td th:text="${memberPolicy.policyStatus}">Status</td>
+                <td><a class="edit-button" th:href="@{'/memberpolicies/edit/' + ${memberPolicy.memberPolicyId}}">Edit</a></td>
+                <td><a class="delete-button" th:href="@{'/memberpolicies/delete/' + ${memberPolicy.memberPolicyId}}">Delete</a></td>
+            </tr>
+        </table>
+
+        <a class="back-button" th:href="@{/}">Back to Home</a>
+    </div>
 </body>
 </html>

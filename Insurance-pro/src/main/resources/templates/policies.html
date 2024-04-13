@@ -6,28 +6,28 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div class="fixed-header" th:replace="header :: common-header"></div>
-    
+    <div th:replace="header :: common-header"></div>
+
     <div class="main-content">
         <h1 class="page-title">Policies</h1>
         
         <a class="add-button" th:href="@{/policies/add}">Add Policy</a>
-       <table>
-        <tr>
-            <th>Policy Type</th>
-            <th>Policy Name</th>
-            <th>Monthly Premium</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        <tr th:each="policy : ${policies}">
-            <td th:text="${policy.policyType}">Type</td>
-            <td th:text="${policy.policyName}">Name</td>
-            <td th:text="${policy.monthlyPremium}">Premium</td>
-            <td><a class="edit-button" th:href="@{'/policies/edit/' + ${policy.policyId}}">Edit</a></td>
-            <td><a class="delete-button" th:href="@{'/policies/delete/' + ${policy.policyId}}">Delete</a></td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <th>Policy Type</th>
+                <th>Policy Name</th>
+                <th>Monthly Premium</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="policy : ${policies}">
+                <td th:text="${policy.policyType}">Type</td>
+                <td th:text="${policy.policyName}">Name</td>
+                <td th:text="${policy.monthlyPremium}">Premium</td>
+                <td><a class="edit-button" th:href="@{'/policies/edit/' + ${policy.policyId}}">Edit</a></td>
+                <td><a class="delete-button" th:href="@{'/policies/delete/' + ${policy.policyId}}">Delete</a></td>
+            </tr>
+        </table>
         <a class="back-button" th:href="@{/}">Back to Home</a>
     </div>
 </body>
