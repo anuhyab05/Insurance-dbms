@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit Member Policy</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<!-- Include header fragment -->
+	<div th:replace="header :: common-header"></div>
+	<h1>Edit Member Policy</h1>
+
+	<form
+		th:action="@{'/memberpolicies/update/' + ${memberPolicy.memberPolicyId}}"
+		th:object="${memberPolicy}" method="post">
+		<div class="form-group">
+			<label for="member">Member:</label> <select id="member"
+				name="memberId" th:field="*{member.memberId}">
+				<option th:each="member : ${members}" th:value="${member.memberId}"
+					th:text="${member.name}">Member</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="policy">Policy:</label> <select id="policy"
+				name="policyId" th:field="*{policy.policyId}">
+				<option th:each="policy : ${policies}" th:value="${policy.policyId}"
+					th:text="${policy.policyName}">Policy</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="status">Policy Status:</label> <input type="text"
+				id="status" name="policyStatus" th:field="*{policyStatus}">
+		</div>
+		<input type="submit" value="Update">
+	</form>
+
+	<a th:href="@{/memberpolicies}">Cancel</a>
+</body>
+</html>

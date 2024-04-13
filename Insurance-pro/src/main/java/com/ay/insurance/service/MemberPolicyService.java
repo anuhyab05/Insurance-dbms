@@ -34,4 +34,12 @@ public class MemberPolicyService {
 	public void deleteMemberPolicy(Long id) {
 		memberPolicyRepository.deleteById(id);
 	}
+
+	public List<MemberPolicy> findPoliciesByMemberId(Long memberId) {
+		return memberPolicyRepository.findByMemberMemberId(memberId);
+	}
+
+	public boolean isPolicyDuplicateForMember(Long memberId, Long policyId) {
+		return memberPolicyRepository.findByMemberMemberIdAndPolicyPolicyId(memberId, policyId).isPresent();
+	}
 }

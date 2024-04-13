@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Claim</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="header :: common-header"></div>
+
+    <h1>Edit Claim</h1>
+    <form th:action="@{'/claims/update/' + ${claim.claimId}}" th:object="${claim}" method="post">
+        <!-- The form structure is similar to add-claim.html -->
+        <!-- ... -->
+    </form>
+
+    <a th:href="@{/claims}">Cancel</a>
+</body>
+</html>

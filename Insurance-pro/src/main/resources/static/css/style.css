@@ -1,46 +1,157 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
+    margin: 0;
+    /* Add padding at the top to ensure the page content does not overlap with the fixed header */
+    padding-top: 100px; /* Height of the fixed header plus some extra space */
 }
 
-header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
-h1 {
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #007bff;
     color: white;
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: center;
+}
+.main-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1.page-title {
+    text-align: center;
+    background-color: coral; /* Page title background color for distinction */
+    color: white; /* Page title text color */
+    padding: 10px 0;
+    margin-bottom: 30px; /* Space between the title and the content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds depth to the page title */
+    border-radius: 5px; /* Optional: Rounds the corners of the page title */
 }
 
 table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
+	width: 80%;
+	margin: 20px auto;
+	border-collapse: collapse;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
-    border: 1px solid #999;
-    padding: 8px;
-    text-align: left;
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
+	color: #007bff;
+	text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
+.add-button {
+	display: block;
+	width: max-content;
+	margin: 10px auto;
+	padding: 10px 15px;
+	background-color: #28a745;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: background-color 0.3s;
+}
+
+.add-button:hover {
+	background-color: #218838;
+}
+
+.back-button {
+	display: block;
+	width: max-content;
+	margin: 10px auto;
+	padding: 5px 10px;
+	background-color: #6c757d;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: background-color 0.3s;
+}
+
+.back-button:hover {
+	background-color: #5a6268;
+}
+/* Table Styles */
+table {
+	width: 90%;
+	margin: 40px auto;
+	border-collapse: collapse;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+th {
+	background-color: #007bff;
+	color: #ffffff;
+	font-weight: normal;
+	padding: 10px;
+	text-align: left;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+	border-top: 1px solid #eaeaea;
+}
+
+tr:nth-child(even) {
+	background-color: #f8f8f8;
+}
+
+/* Additional styling for aesthetic improvement */
+th, td {
+	border-bottom: 1px solid #ddd;
+}
+
+table a {
+	padding: 5px 10px;
+	background-color: #007bff;
+	color: #fff;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+table a:hover {
+	background-color: #0056b3;
+}
+
+.edit-button {
+	background-color: #ffc107;
+}
+
+.edit-button:hover {
+	background-color: #e0a800;
+}
+
+.delete-button {
+	background-color: #dc3545;
+}
+
+.delete-button:hover {
+	background-color: #c82333;
+}
 .form-group {
     margin-bottom: 15px;
 }
@@ -51,21 +162,26 @@ a:hover {
 }
 
 .form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="number"] {
+.form-group input[type="number"],
+.form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 
-.form-group input[type="submit"] {
-    background-color: #007bff;
+.submit-button {
+    background-color: #28a745;
     color: white;
     padding: 10px 15px;
     border: none;
     cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
-.form-group input[type="submit"]:hover {
-    background-color: #0056b3;
+.submit-button:hover {
+    background-color: #218838;
 }
+
+/* The .back-button class has already been styled in the previous CSS update. */

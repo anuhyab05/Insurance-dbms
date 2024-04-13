@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Claims</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="header :: common-header"></div>
+
+    <h1>Claims</h1>
+    <a th:href="@{/claims/add}">File a New Claim</a>
+    <table>
+        <tr>
+            <th>Member</th>
+            <th>Policy</th>
+            <th>Claim Amount</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="claim : ${claims}">
+            <td th:text="${claim.memberPolicy.member.name}">Member Name</td>
+            <td th:text="${claim.memberPolicy.policy.policyName}">Policy Name</td>
+            <td th:text="${claim.claimAmount}">Claim Amount</td>
+            <td th:text="${claim.claimStatus}">Status</td>
+            <td><a th:href="@{'/claims/edit/' + ${claim.claimId}}">Edit</a></td>
+            <td><a th:href="@{'/claims/delete/' + ${claim.claimId}}">Delete</a></td>
+        </tr>
+    </table>
+
+    <a th:href="@{/}">Back to Home</a>
+</body>
+</html>

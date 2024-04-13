@@ -6,6 +6,8 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+	<!-- Include header fragment -->
+	<div th:replace="header :: common-header"></div>
 	<h1>Edit Policy</h1>
 
 	<form th:action="@{'/policies/update/' + ${policy.policyId}}"
