@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Add Member Policy</title>
-<link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta charset="UTF-8">
+    <title>Add Member Policy</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-	<h1>Add New Member Policy</h1>
+    <div th:replace="header :: common-header"></div>
 
-	<form th:action="@{/memberpolicies}" th:object="${memberPolicy}"
-		method="post">
-		<div class="form-group">
-			<label for="member">Member:</label> <select id="member"
-				name="memberId" th:field="*{member.memberId}">
-				<option th:each="member : ${members}" th:value="${member.memberId}"
-					th:text="${member.name}">Member</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="policy">Policy:</label> <select id="policy"
-				name="policyId" th:field="*{policy.policyId}">
-				<option th:each="policy : ${policies}" th:value="${policy.policyId}"
-					th:text="${policy.policyName}">Policy</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="status">Policy Status:</label> <input type="text"
-				id="status" name="policyStatus" th:field="*{policyStatus}">
-		</div>
-		<input type="submit" value="Submit">
-	</form>
-	<!-- Include header fragment -->
-	<div th:replace="header :: common-header"></div>
+    <div class="main-content">
+        <h1 class="page-title">Add New Member Policy</h1>
 
-	<!-- Below this line, insert your form and other HTML code as before -->
+        <form th:action="@{/memberpolicies}" th:object="${memberPolicy}" method="post">
+            <div class="form-group">
+                <label for="member">Member:</label> 
+                <select id="member" name="memberId" th:field="*{member.memberId}">
+                    <option th:each="member : ${members}" th:value="${member.memberId}"
+                        th:text="${member.name}">Member</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="policy">Policy:</label> 
+                <select id="policy" name="policyId" th:field="*{policy.policyId}">
+                    <option th:each="policy : ${policies}" th:value="${policy.policyId}"
+                        th:text="${policy.policyName}">Policy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Policy Status:</label> 
+                <input type="text" id="status" name="policyStatus" th:field="*{policyStatus}">
+            </div>
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
 
-	<!-- Show error message if any -->
-	<div th:if="${errorMessage}" class="error-message">
-		<p th:text="${errorMessage}"></p>
-	</div>
+        <div th:if="${errorMessage}" class="error-message">
+            <p th:text="${errorMessage}"></p>
+        </div>
 
-	<a th:href="@{/memberpolicies}">Cancel</a>
+        <a class="back-button" th:href="@{/memberpolicies}">Cancel</a>
+    </div>
 </body>
 </html>

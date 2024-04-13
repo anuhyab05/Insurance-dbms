@@ -1,34 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    /* Add padding at the top to ensure the page content does not overlap with the fixed header */
-    padding-top: 100px; /* Height of the fixed header plus some extra space */
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	/* Add padding at the top to ensure the page content does not overlap with the fixed header */
+	padding-top: 100px;
+	/* Height of the fixed header plus some extra space */
 }
 
 .fixed-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 0;
-    z-index: 1000;
-    text-align: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #007bff;
+	color: white;
+	padding: 10px 0;
+	z-index: 1000;
+	text-align: center;
 }
+
 .main-content {
-    width: 90%;
-    margin: 0 auto;
+	width: 90%;
+	margin: 0 auto;
 }
 
 h1.page-title {
-    text-align: center;
-    background-color: coral; /* Page title background color for distinction */
-    color: white; /* Page title text color */
-    padding: 10px 0;
-    margin-bottom: 30px; /* Space between the title and the content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds depth to the page title */
-    border-radius: 5px; /* Optional: Rounds the corners of the page title */
+	text-align: center;
+	background-color: coral;
+	/* Page title background color for distinction */
+	color: white; /* Page title text color */
+	padding: 10px 0;
+	margin-bottom: 30px; /* Space between the title and the content */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	/* Optional: Adds depth to the page title */
+	border-radius: 5px;
+	/* Optional: Rounds the corners of the page title */
 }
 
 table {
@@ -152,36 +157,125 @@ table a:hover {
 .delete-button:hover {
 	background-color: #c82333;
 }
+
 .form-group {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+	display: block;
+	margin-bottom: 5px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="number"],
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+.form-group input[type="text"], .form-group input[type="number"],
+	.form-group select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
 }
 
 .submit-button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: background-color 0.3s;
+	background-color: #28a745;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-    background-color: #218838;
+	background-color: #218838;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.form-group input[type="text"], .form-group input[type="email"] {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.submit-button, .back-button {
+	padding: 10px 15px;
+	margin-top: 10px;
+	border: none;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.submit-button {
+	background-color: #007bff;
+}
+
+.submit-button:hover {
+	background-color: #0056b3;
+}
+
+.back-button {
+	background-color: #6c757d;
+}
+
+.back-button:hover {
+	background-color: #5a6268;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.form-group select, .form-group input[type="text"], .form-group input[type="email"],
+	.form-group input[type="number"] {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.submit-button, .back-button {
+	padding: 10px 15px;
+	margin-top: 10px;
+	border: none;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block; /* To enable proper spacing */
+}
+
+.submit-button {
+	background-color: #007bff;
+}
+
+.submit-button:hover {
+	background-color: #0056b3;
+}
+
+.back-button {
+	background-color: #6c757d;
+}
+
+.back-button:hover {
+	background-color: #5a6268;
+}
+
+.error-message {
+	color: #dc3545; /* Bootstrap danger color for error messages */
+	margin: 20px 0;
 }
 
 /* The .back-button class has already been styled in the previous CSS update. */
