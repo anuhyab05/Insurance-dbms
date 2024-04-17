@@ -89,7 +89,3 @@ Navigate through the application using the main menu on the homepage. Each secti
 # Contributions
 
 Contributions are welcome! For major changes, please open an issue first to discuss what you would like to change. Ensure to update tests as appropriate.
-
-# License
-
-Distributed under the MIT License. See LICENSE for more information.
